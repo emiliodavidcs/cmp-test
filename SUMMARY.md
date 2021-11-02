@@ -31,3 +31,9 @@ To run the application tests, run the following command
 ```
 docker exec -it cmp-app bin/phpunit
 ```
+
+## Further improvements
+1. Control exceptions, for example if source file does not exist, or format is wrong.
+2. Write some integration tests, so we can be sure that the whole process is working.
+3. Extract the function "import" of the Importer classes to a parent abstract class (creating kind of a template pattern design).
+4. For sure, any improvement that is suggested by possible colleagues.
