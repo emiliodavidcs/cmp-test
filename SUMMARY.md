@@ -37,3 +37,4 @@ docker exec -it cmp-app bin/phpunit
 2. Write some integration tests, so we can be sure that the whole process is working.
 3. Extract the function "import" of the Importer classes to a parent abstract class (creating kind of a template pattern design).
 4. For sure, any improvement that is suggested by possible colleagues.
+5. Install and implement static code analyser such as PHP CS Fixer and PHPStan.
