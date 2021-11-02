@@ -23,3 +23,15 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Service\Importer\FlubImporter:
+        arguments:
+            $reader: '@App\Service\Reader\FileReader'
+            $parser: '@App\Service\Parser\YamlParser'
+            $resource: '%env(VIDEO_RESOURCE_FLUB)%'
+
+    App\Service\Importer\GlorfImporter:
+        arguments:
+            $reader: '@App\Service\Reader\FileReader'
+            $parser: '@App\Service\Parser\JsonParser'
+            $resource: '%env(VIDEO_RESOURCE_GLORF)%'
