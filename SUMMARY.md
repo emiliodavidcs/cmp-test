@@ -32,6 +32,16 @@ To run the application tests, run the following command
 docker exec -it cmp-app bin/phpunit
 ```
 
+## How does it work?
+There are 3 main classes: "Reader", "Parser" and "Importer".
+- Reader: used to retrieve the content from the source.
+- Parser: transforms the plain content into PHP array for easy manipulation.
+- Importer: based on the data structure of each source, creates the videos to be saved into our database (once the database is implemented).
+
+Each "Importer" (with its corresponding "Reader" and "Parser") should be defined in the file "config/services.yaml" and then inyected into "src/Service/Importer/ImporterFactory" service.
+
+This approach allows to change any of the Reader, Parser and url for each source directly into the services config file without having to change the Importer implementations.
+
 ## Further improvements
 1. Control exceptions, for example if source file does not exist, or format is wrong.
 2. Write some integration tests, so we can be sure that the whole process is working.
